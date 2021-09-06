@@ -9,7 +9,7 @@ The code is originally from https://github.com/mitchelljy/Prntsc_Scraper but i m
 
 # USAGE
 you can execute it with python3 main.py and it will run with default parameters
-you can use the following arguments:
+you can use the following arguments:  
 --start_code xx1111 (2 letters and 4 numbers, default is aa1111)   
 --count x (number of image to download, default is 1000)   
 --output_path foldername/ (default is output/)   
