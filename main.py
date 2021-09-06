@@ -67,12 +67,15 @@ def get_img_url(code):
 
 # Saves image from URL
 def get_img(path, code):
-    url = get_img_url(code)
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(f"{path}.png", 'wb') as f:
-            f.write(response.content)
-    print(f"Saved image number {j}/{args.count} with code: {code}")
+    try:
+        url = get_img_url(code)
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(f"{path}.png", 'wb') as f:
+                f.write(response.content)
+        print(f"Saved image number {j}/{args.count} with code: {code}")
+    except:
+        print("error")
 
 
 if __name__ == '__main__':
@@ -80,7 +83,7 @@ if __name__ == '__main__':
     parser = parser.ArgumentParser()
     parser.add_argument('--start_code', help='6 character string made up of lowercase letters and numbers which is '
                                              'where the scraper will start. e.g. abcdef -> abcdeg -> abcdeh',
-                        default='aa1111')
+                        default='aa2164')
     parser.add_argument('--count', help='The number of images to scrape.', default='1000')
     parser.add_argument('--output_path', help='The path where images will be stored.', default='output/')
 
